@@ -26,7 +26,7 @@ jobs:
           # The connection string, including authentication information, for the Azure SQL Server database.
           connection-string: ${{ secrets.CONNECTION_STRING }}
           # Path to SQL script file to deploy
-          sql-file: './script.sql'          
+          sql-file: './sql/script.sql'          
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
