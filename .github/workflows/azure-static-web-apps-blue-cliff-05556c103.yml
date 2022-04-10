@@ -18,6 +18,15 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
+      - name: Azure SQL Deploy
+        uses: Azure/sql-action@v1
+        with:
+          # Name of the Azure SQL Server name, like Fabrikam.database.windows.net.
+          server-name: tcp:dotnetthoughts.database.windows.net
+          # The connection string, including authentication information, for the Azure SQL Server database.
+          connection-string: ${{ secrets.CONNECTION_STRING }}
+          # Path to SQL script file to deploy
+          sql-file: ${{env.DOTNET_ROOT}}/sql/sql-script.sql          
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
