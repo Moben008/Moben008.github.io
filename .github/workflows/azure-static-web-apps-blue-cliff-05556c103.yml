@@ -27,7 +27,8 @@ jobs:
           connection-string: ${{ secrets.CONNECTION_STRING }}
           # Path to SQL script file to deploy
           #sql-file: /sql/script.sql
-          dacpac-package: /sql/script.sql          
+          sql-file: './sql/*.sql'
+          #project-file: './Database.sqlproj'          
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
