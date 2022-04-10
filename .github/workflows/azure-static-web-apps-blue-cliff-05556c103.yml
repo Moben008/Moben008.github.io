@@ -19,7 +19,7 @@ jobs:
         with:
           submodules: true
       - name: Azure SQL Deploy
-        uses: Azure/sql-action@v1
+        uses: Azure/sql-action@v1.2
         with:
           # Name of the Azure SQL Server name, like Fabrikam.database.windows.net.
           server-name: tcp:test-server008.database.windows.net
